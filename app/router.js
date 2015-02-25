@@ -6,7 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+
   this.resource('videos', function() {});
+
 });
 
 export default Router;
