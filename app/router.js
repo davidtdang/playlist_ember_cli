@@ -14,7 +14,11 @@ Router.map(function() {
 
   this.route('playlists', function() {
     this.route('create');
-    this.route('show');
+    this.route('show', {path: "/:playlist_id"}, function() {
+      this.resource('videos', function() {
+        this.route('search');
+      });
+    });
   });
 });
 
