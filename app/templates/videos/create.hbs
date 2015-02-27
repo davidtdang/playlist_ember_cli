@@ -4,6 +4,6 @@
 
 <center><h2>Create Your Playlist</h2>
 
-<div class="field"{{input value=newPlaylistName placeholder="Make a Playlist"}}></div>
-<div class="ui circular red button"{{action "create"}}><center><i class="write icon"></i></center></button>
+<div class="field"{{input value=model.name placeholder="Make a Playlist"}}></div>
+<div class="ui circular red button"{{action "create" model}}><center><i class="write icon"></i></center></button>
 </center>
