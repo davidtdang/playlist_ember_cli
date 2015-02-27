@@ -15,6 +15,7 @@ Router.map(function() {
 
   this.route('playlists', function() {
     this.route('create');
+    this.route('show');
   });
 });
 

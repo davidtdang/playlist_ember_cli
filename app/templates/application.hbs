@@ -1,8 +1,41 @@
 <div class="ui teal fixed inverted menu">
-  <center><a class="item">
-    {{#link-to "playlists.create" class="navLink"}}<i class="add circle icon"></i> Create Playlist{{/link-to}}
-    {{#link-to "videos.search" class="navLink"}}<i class="search icon"></i> Search Videos{{/link-to}}
-  </a></center>
+  <center>
+  <a class="item">
+    <div class="ui animated teal fade button">
+      <div class="visible content">
+        {{#link-to "playlists.create" class="navLink"}}<i class="add circle large icon"></i>{{/link-to}}
+      </div>
+      <div class="hidden content">
+        {{#link-to "playlists.create" class="hiddenLink"}}New Playlist{{/link-to}}
+      </div>
+    </div>
+  </a>
+
+  <a class="item">
+    <div class="ui animated teal fade button">
+      <div class="visible content">
+        {{#link-to "videos.search" class="navLink"}}<i class="search large icon"></i>{{/link-to}}
+      </div>
+      <div class="hidden content">
+        {{#link-to "videos.search" class="hiddenLink"}}Find Videos{{/link-to}}
+      </div>
+    </div>
+  </a>
+
+  <a class="item">
+    <div class="ui animated teal fade button">
+      <div class="visible content">
+        {{#link-to "playlists.show" class="navLink"}}<i class="play large icon"></i>{{/link-to}}
+      </div>
+      <div class="hidden content">
+        {{#link-to "playlists.show" class="hiddenLink"}}Your Playlist{{/link-to}}
+      </div>
+    </div>
+  </a>
+
+
+
+  </center>
 </div>
 
 

@@ -1,12 +1,9 @@
-
-
-
 <center>
 <div class="tagline"><h1><i class="red youtube play icon"></i> Create Your Playlist</h1></div></center>
   <div class="ui grid">
     <div class="three wide column"></div>
     <div class="nine wide column">
-      <div class="ui icon fluid input">{{input value=model.name placeholder="name your playlist"}}</div>
+      <div class="ui icon fluid input">{{input value=model.name placeholder="playlist title"}}</div>
     </div>
     <div class="one wide column">
       <div class="ui inverted circular teal icon button" id="createbutton"{{action "create" model}}><i class="large write icon"></i></button>
