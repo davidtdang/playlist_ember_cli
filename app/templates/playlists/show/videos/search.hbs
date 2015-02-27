@@ -1,1 +1,40 @@
-{{outlet}}
+<center>
+<div class="tagline"><h1><i class="red youtube play icon"></i> Find Videos For Your Playlist</h1></div></center>
+  <div class="ui grid">
+    <div class="three wide column"></div>
+    <div class="nine wide column">
+      <div class="ui icon fluid input">{{input value=newSearchTerm placeholder="search"}}</div>
+    </div>
+    <div class="one wide column">
+      <center><div class="ui teal inverted circular icon button" id="searchbutton"{{action "search"}}><i class="large search icon"></i></button></center>
+      </div>
+    </div>
+  </div>
+</div>
+</center>
+
+
+
+
+
+{{#each video in videos}}
+<div class="ui grid">
+  <div class="three wide column"></div>
+  <div class="nine wide column">
+    <div class="ui inverted fluid segment" id="roundedsegment">
+      <a class="ui left teal corner label"></a>
+        <div id="main-outlet">
+          <ul><center><img {{bind-attr src=video.thumbnail }} alt="thumbnail"></center></ul>
+          <ul><center><h2>{{video.title}}</h2></center></ul>
+          <ul class="videoDescription">{{video.description}}</ul>
+          <ul><center>{{ember-youtube ytid=video.videoId }}</center></ul>
+          <ul class="watchOnYoutubeButton"><center><a {{bind-attr href=video.videoId }}><i class="big red youtube play icon" ></i></a></center></ul>
+        </div>
+    </div>
+    </div>
+
+    <div class="one wide column">
+      <ul><div class="ui teal inverted circular large icon button" id="plusbutton"{{action "add"}}><i class="add large icon"></i></button></ul>
+  </div>
+</div>
+{{/each}}
