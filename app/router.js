@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('show');
     this.route('search');
     this.route('results', {path: "/search/:query"});
+    this.route('create');
   });
 
 });

@@ -3,20 +3,22 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions:{
     search: function(){
-      var qop = this.get('newSearchTerm');
+      var _this = this;
+      var query = this.get('newSearchTerm');
       var request = gapi.client.youtube.search.list({
-        q: qop,
+        q: query,
         part: 'snippet'
       });
 
       request.execute(function(response) {
 
-        console.log(response);
-        console.log(response.items[0].snippet.title);
-        console.log(response.items[0].snippet.thumbnails.default.url);
-        console.log(response.items[0].id.videoId);
-        console.log(response.items[0].snippet.description);
+        var newVideos = []
 
+        for (var i = 0; i < response.items.length; i++) {
+          newVideos.push({title: response.items[i].snippet.title, description: response.items[i].snippet.description, thumbnail: response.items[i].snippet.thumbnails.default.url, videoId: "https://www.youtube.com/watch?v=" + response.items[i].id.videoId})
+        }
+
+        _this.set('videos', newVideos)
 
 
       });
