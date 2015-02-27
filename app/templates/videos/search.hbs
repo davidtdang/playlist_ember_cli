@@ -1,5 +1,5 @@
 
-<center><h2>Start Adding To Your Mix</h2>
+<center><h2>Start Adding To Your Mix!</h2>
 
 <div class="field"{{input value=newSearchTerm placeholder="search"}}></div>
 <div class="ui circular red button"{{action "search"}}><center><i class="search icon"></i></center></button>
@@ -11,10 +11,11 @@
 
 {{#each video in videos}}
 <div class="ui grid">
+<div class="two wide column"></div>
 <div class="twelve wide column">
     <div class="ui segment">
       <div id="main-outlet">
-  <ul>{{video.title}}</ul>
+  <ul><h2>{{video.title}}</h2></ul>
   <ul>{{video.description}}</ul>
   <ul><a {{bind-attr href=video.videoId }}>Watch on Youtube</a></ul>
   <ul><img {{bind-attr src=video.thumbnail }} alt="thumbnail"></ul>
