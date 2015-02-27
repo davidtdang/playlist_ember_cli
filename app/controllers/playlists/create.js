@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       return this.store.createRecord('playlist', {name: playlist});
       var _this = this;
       playlist.save().then(function(){
-        _this.transitionToRoute('videos.search', playlist);
+        _this.transitionToRoute('search', playlist);
       });
 
     }

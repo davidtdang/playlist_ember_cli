@@ -6,11 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('videos', {path: '/'}, function() {
+  this.resource('videos', function() {
     this.route('show');
     this.route('search');
     this.route('results', {path: "/search/:query"});
-    this.route('create');
   });
 
   this.route('playlists', function() {
