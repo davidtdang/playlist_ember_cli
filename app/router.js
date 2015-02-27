@@ -6,7 +6,6 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-
   this.resource('videos', {path: '/'}, function() {
     this.route('show');
     this.route('search');
@@ -14,6 +13,9 @@ Router.map(function() {
     this.route('create');
   });
 
+  this.route('playlists', function() {
+    this.route('create');
+  });
 });
 
 export default Router;

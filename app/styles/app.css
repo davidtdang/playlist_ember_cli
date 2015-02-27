@@ -1,12 +1,68 @@
 .navLink {
-  margin: 0px 10px;
+  margin: 0px 20px;
 }
 
 body {
   padding: 20px;
+  background-image: url("blurrain.jpg");
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
-
 
 div {
   margin: 5px;
+}
+
+#main-outlet {
+  padding-right: 25px;
+}
+
+.tagline {
+  padding-top: 50px;
+  color: white;
+}
+
+#searchbutton{
+  margin-left: -20px;
+  padding: 15px;
+}
+
+#createbutton{
+  margin-left: -20px;
+  padding: 15px;
+}
+
+#plusbutton{
+  margin-left: -20px;
+  vertical-align: middle;
+  margin-top: 240px;
+  padding: 25px;
+}
+
+.videoDescription{
+  color: #f6baae;
+}
+
+.watchOnYoutubeButton{
+  float: right;
+}
+
+/* unvisited link */
+a:link {
+    color: #ea4e5e;
+}
+
+/* visited link */
+a:visited {
+    color: #ea4e5e;
+}
+
+/* mouse over link */
+a:hover {
+    color: #ea4e5e;
+}
+/* selected link */
+a:active {
+    color: #ea4e5e;
 }

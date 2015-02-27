@@ -1,8 +1,17 @@
 
-<center><h2>Start Adding To Your Mix!</h2>
-
-<div class="field"{{input value=newSearchTerm placeholder="search"}}></div>
-<div class="ui circular red button"{{action "search"}}><center><i class="search icon"></i></center></button>
+<center>
+<div class="tagline"><h1><i class="red youtube play icon"></i> Add to Your Mix</h1></div></center>
+  <div class="ui grid">
+    <div class="three wide column"></div>
+    <div class="nine wide column">
+      <div class="ui icon fluid input">{{input value=newSearchTerm placeholder="search"}}</div>
+    </div>
+    <div class="one wide column">
+      <center><div class="ui teal inverted circular icon button" id="searchbutton"{{action "search"}}><i class="large search icon"></i></button></center>
+      </div>
+    </div>
+  </div>
+</div>
 </center>
 
 
@@ -11,18 +20,24 @@
 
 {{#each video in videos}}
 <div class="ui grid">
-<div class="two wide column"></div>
-<div class="twelve wide column">
-    <div class="ui segment">
-      <div id="main-outlet">
-  <ul><h2>{{video.title}}</h2></ul>
-  <ul>{{video.description}}</ul>
-  <ul><a {{bind-attr href=video.videoId }}>Watch on Youtube</a></ul>
-  <ul><img {{bind-attr src=video.thumbnail }} alt="thumbnail"></ul>
-  <ul><div class="ui circular green button"{{action "add"}}><center><i class="add large circle icon"></i></center></button></ul>
+  <div class="three wide column"></div>
+  <div class="nine wide column">
+    <div class="ui inverted fluid segment">
+      <a class="ui left teal corner label">
+        <i class="asterisk icon"></i>
+      </a>
+        <div id="main-outlet">
+          <ul><center><img {{bind-attr src=video.thumbnail }} alt="thumbnail"></center></ul>
+          <ul><center><h2>{{video.title}}</h2></center></ul>
+          <ul class="videoDescription">{{video.description}}</ul>
+          <ul><center>{{ember-youtube ytid=video.videoId }}</center></ul>
+          <ul class="watchOnYoutubeButton"><center><a {{bind-attr href=video.videoId }}><i class="large red youtube play icon" ></i></a></center></ul>
+        </div>
+    </div>
+    </div>
 
-</div>
-</div>
-</div>
+    <div class="one wide column">
+      <ul><div class="ui teal inverted circular large icon button" id="plusbutton"{{action "add"}}><i class="add large icon"></i></button></ul>
+  </div>
 </div>
 {{/each}}

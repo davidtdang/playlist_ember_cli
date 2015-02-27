@@ -11,18 +11,19 @@ export default Ember.Controller.extend({
       });
 
       request.execute(function(response) {
-
-        var newVideos = []
+        console.log(response);
+        var newVideos = [];
 
         for (var i = 0; i < response.items.length; i++) {
-          newVideos.push({title: response.items[i].snippet.title, description: response.items[i].snippet.description, thumbnail: response.items[i].snippet.thumbnails.default.url, videoId: "https://www.youtube.com/watch?v=" + response.items[i].id.videoId})
-        }
-
-        _this.set('videos', newVideos)
-
-
-      });
-
+          newVideos.push(
+            {title: response.items[i].snippet.title,
+              description: response.items[i].snippet.description,
+              thumbnail: response.items[i].snippet.thumbnails.high.url,
+              videoId: "https://www.youtube.com/watch?v=" + response.items[i].id.videoId}
+            );
+          }
+          _this.set('videos', newVideos);
+        });
+      }
     }
-  }
-});
+  });
