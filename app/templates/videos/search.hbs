@@ -24,14 +24,14 @@
   <div class="nine wide column">
     <div class="ui inverted fluid segment">
       <a class="ui left teal corner label">
-        <i class="asterisk icon"></i>
+        <i class="asterisk loading icon"></i>
       </a>
         <div id="main-outlet">
           <ul><center><img {{bind-attr src=video.thumbnail }} alt="thumbnail"></center></ul>
           <ul><center><h2>{{video.title}}</h2></center></ul>
           <ul class="videoDescription">{{video.description}}</ul>
           <ul><center>{{ember-youtube ytid=video.videoId }}</center></ul>
-          <ul class="watchOnYoutubeButton"><center><a {{bind-attr href=video.videoId }}><i class="large red youtube play icon" ></i></a></center></ul>
+          <ul class="watchOnYoutubeButton"><center><a {{bind-attr href=video.videoId }}><i class="big red youtube play icon" ></i></a></center></ul>
         </div>
     </div>
     </div>
